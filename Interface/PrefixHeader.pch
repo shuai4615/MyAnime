@@ -1,0 +1,66 @@
+//
+//  PrefixHeader.pch
+//  MyAnime
+//
+//  Created by qianfeng on 15/6/8.
+//  Copyright (c) 2015年 IsMe. All rights reserved.
+//
+
+#ifndef MyAnime_PrefixHeader_pch
+#define MyAnime_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "HttpRequestManager.h"
+#import "UIImageView+AFNetworking.h"
+#import "UIImageView+WebCache.h"
+#import "DataBase.h"
+#import "AFNetworking.h"
+#import "AppDelegate.h"
+
+
+//今日推荐(offset = 0 / 20 / 40 / 60 / 80)
+#define TodayRecommend_URL @"http://api.kuaikanmanhua.com/v1/comic_lists/1?offset=%@&limit=20"
+
+//今日推荐详情(%@ = id)
+#define TodayData_URL @"http://api.kuaikanmanhua.com/v1/comics/%@"  //内容
+
+#define TodayComments_URl @"http://api.kuaikanmanhua.com/v1/comics/%@/hot_comments" //评论
+
+//专辑-内容 (%@ [topic][id], %@ 0[倒序] 1[正序])
+#define TheAlbum_URL @"http://api.kuaikanmanhua.com/v1/topics/%@?sort=%@"
+
+//发现 (滑动视图)
+#define SlidingPriture_URl @"http://api.kuaikanmanhua.com/v1/banners"
+
+//发现 (各个分类)
+#define Found_URl @"http://api.kuaikanmanhua.com/v1/topic_lists/mixed"
+
+//各个专题信息
+#define Project_One_URl @"http://api.kuaikanmanhua.com/v1/topic_lists%2F1?offset="     //热门专题
+
+#define Project_Two_URl @"http://api.kuaikanmanhua.com/v1/comic_lists%2F2?offset="     //热门单篇
+
+#define Project_Three_URl @"http://api.kuaikanmanhua.com/v1/topic_lists%2F2?offset="     //最新更新
+
+#define Project_Four_URl @"http://api.kuaikanmanhua.com/v1/topic_lists%2F3?offset="     //编辑推荐
+
+#define Project_Five_URl @"http://api.kuaikanmanhua.com/v1/topic_lists%2Fothers?offset="       //所有专题
+
+//搜索
+//按钮
+#define SearchButton_URl @"http://api.kuaikanmanhua.com/v1/topics?offset=%d&limit=20&tag=%@"
+
+//自主搜索
+#define Search_URl @"http://api.kuaikanmanhua.com/v1/topics/search?keyword=%@&offset=%d&limit=20"
+
+//用户信息
+#define UserData_URL @"http://api.kuaikanmanhua.com/v1/users/%@"
+
+//更过评论
+#define MoreNewComments_URL @"http://api.kuaikanmanhua.com/v1/comics/%@/comments?order=&offset=%d&limit=20"    //最新评论
+
+#define MoreHotComments_URL @"http://api.kuaikanmanhua.com/v1/comics/%@/comments?order=score&offset=%d&limit=20"   //最热评论
+
+#endif
